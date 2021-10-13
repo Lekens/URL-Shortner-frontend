@@ -66,12 +66,6 @@
     "coverage": "react-scripts test --coverage --watchAll=false",
     "lint:style": "npx stylelint \"**/*.scss\""
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged --allow-empty",
-      "pre-push": "npm run test -- --watchAll=false"
-    }
-  },
   "lint-staged": {
     "*.{scss,css}": [
       "stylelint \"**/*.{css,scss,sass}\""
