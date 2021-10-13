@@ -1,6 +1,6 @@
 {
-  "name": "web-baccarat-table-players",
-  "version": "0.1.0",
+  "name": "Url-Shortener-frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
@@ -107,10 +107,10 @@
   "jest": {
     "coverageThreshold": {
       "global": {
-        "branches": 32,
-        "functions": 36,
-        "lines": 39,
-        "statements": 39
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
       }
     }
   }
