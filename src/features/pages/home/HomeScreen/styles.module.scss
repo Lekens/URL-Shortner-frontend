@@ -65,9 +65,10 @@ hr {
   padding: 5px 0 10px 0;
 }
 .responseMessage {
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
   display: none;
+  padding-bottom: 10px;
 }
 .red {
   color: $red;

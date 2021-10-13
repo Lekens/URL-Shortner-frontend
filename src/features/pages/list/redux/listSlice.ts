@@ -12,16 +12,20 @@ export const listSlice: any = createSlice({
     fetchURLsState: (state) => state,
 
     sendSuccess: (state, action) => {
-      if (action.payload.status === 'SUCCESS') {
+      if (
+        action.payload &&
+        action.payload.data &&
+        action.payload.data.status === 'SUCCESS'
+      ) {
         const resp = action.payload.data;
-        state.encodeData = resp.data;
+        state.urlList = resp.data;
         state.responseMessage = resp.msg || 'Request successful!';
         state.responseStatus = resp.status;
       } else {
         const resp = action.payload.response.data;
         state.responseMessage = resp.msg || 'Unknown error!';
         state.responseStatus = resp.status;
-        state.encodeData = {};
+        state.urlList = [];
       }
       state.loading = false;
     },
