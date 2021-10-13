@@ -5,11 +5,17 @@ export const listSlice: any = createSlice({
   initialState: {
     urlList: [],
     loading: true,
+    responseMessage: null,
+    responseStatus: null,
   } as any,
   reducers: {
     fetchURLsState: (state) => state,
 
-    sendSuccess: (state) => {
+    sendSuccess: (state, action) => {
+      const resp = action.payload.data;
+      state.urlList = resp.data;
+      state.responseMessage = resp.msg || 'Unknown error!';
+      state.responseStatus = resp.status;
       state.loading = false;
     },
 

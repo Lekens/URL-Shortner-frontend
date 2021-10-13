@@ -11,6 +11,7 @@ import {
   selectURLList,
 } from 'features/pages/list/redux/selectors';
 import { Loading } from 'ui/atoms/Loading';
+import { Table } from 'features/common/components/Table';
 
 import styles from './styles.module.scss';
 
@@ -26,7 +27,7 @@ function ListScreen() {
 
   return (
     <div className={styles.wrapper}>
-      {loading ? <Loading /> : <div>LIST URL PAGE-{urlList}</div>}
+      {loading ? <Loading /> : <Table data={urlList} />}
     </div>
   );
 }
