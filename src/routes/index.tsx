@@ -4,11 +4,13 @@ import {
   Route,
   RouteComponentProps,
   RouteProps,
+  Redirect,
 } from 'react-router-dom';
 
 import { PAGES } from 'constants/pages';
 import { PageWrapper } from 'features/common/components/PageWrapper';
 import { HomeScreen } from 'features/pages/home';
+import { DecodeScreen } from 'features/pages/decode';
 
 interface IAppWrapperRouteProps extends RouteProps {
   component:
@@ -31,6 +33,8 @@ function Routes() {
   return (
     <Switch>
       <AppWrapper component={HomeScreen} path={PAGES.HOME.INDEX} />
+      <AppWrapper component={DecodeScreen} path={PAGES.HOME.DECODE} />
+      <Redirect to={PAGES.HOME.INDEX} />
     </Switch>
   );
 }

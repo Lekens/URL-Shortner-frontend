@@ -1,6 +1,7 @@
 export const PAGES = Object.freeze({
   HOME: {
-    INDEX: '/',
+    INDEX: '/encode',
     DECODE: '/decode',
+    LIST: '/list',
   },
 });

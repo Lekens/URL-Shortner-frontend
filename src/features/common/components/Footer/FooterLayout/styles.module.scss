@@ -8,12 +8,10 @@
 }
 
 .content {
-  display: flex;
   height: 38px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4px 5px;
+  padding: 10px 0;
   color: $white;
+  text-align: center;
 }
 
 .footerTabs {

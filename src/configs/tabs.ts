@@ -11,6 +11,11 @@ const getTabs = () => [
     url: PAGES.HOME.DECODE,
     redirect: PAGES.HOME.DECODE,
   },
+  {
+    title: 'List URLs',
+    url: PAGES.HOME.LIST,
+    redirect: PAGES.HOME.LIST,
+  },
 ];
 
 export const TABS = getTabs();
