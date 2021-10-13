@@ -6,10 +6,8 @@ import App from 'App/App';
 import history from 'utils/history';
 import { store } from 'redux-settings/store';
 import reportWebVitals from 'reportWebVitals';
-
 import 'features/common/assets/styles/vendor.css';
 import 'features/common/assets/styles/global.module.scss';
-
 
 ReactDOM.render(
   <Provider store={store}>

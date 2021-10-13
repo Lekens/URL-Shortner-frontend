@@ -14,13 +14,10 @@ const getEnvVariable = (variableName: string) => {
   return process.env[variableName];
 };
 
-
 const variables = {
   PORT: getEnvVariable('PORT'),
   REACT_APP_API_URL: getEnvVariable('REACT_APP_API_URL'),
 };
-
-export const { PORT, REACT_APP_API_URL } =
-  variables;
+export const { PORT, REACT_APP_API_URL } = variables;
 
 export default variables;

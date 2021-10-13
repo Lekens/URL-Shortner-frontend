@@ -10,7 +10,7 @@ const getTabs = () => [
     title: 'Decode Url',
     url: PAGES.HOME.DECODE,
     redirect: PAGES.HOME.DECODE,
-  }
+  },
 ];
 
 export const TABS = getTabs();

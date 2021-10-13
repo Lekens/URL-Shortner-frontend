@@ -1,16 +1,14 @@
 import { Avatar } from 'ui/atoms/Avatar';
 import { ComponentWrapper } from 'ui/atoms/ComponentWrapper';
+import { TabNavigation } from 'features/common/components/TabNavigation';
 
 import styles from './styles.module.scss';
-import { TabNavigation } from 'features/common/components/TabNavigation';
 
 function TopHeader() {
   return (
     <div className={styles.wrapper}>
       <ComponentWrapper>
-        <div className={styles.centralizeLogo}>
-          URL Shortener
-        </div>
+        <div className={styles.centralizeLogo}>URL Shortener</div>
         <div className={styles.content}>
           <div>
             <TabNavigation />

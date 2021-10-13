@@ -19,12 +19,6 @@ export const homeSlice: any = createSlice({
     },
   },
 });
-
-export const {
-  sendSuccess,
-  fetchState,
-  startLoading,
-  handleError,
-} = homeSlice.actions;
-
+export const { sendSuccess, fetchState, startLoading, handleError } =
+  homeSlice.actions;
 export default homeSlice.reducer;
