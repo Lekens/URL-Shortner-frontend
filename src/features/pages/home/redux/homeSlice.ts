@@ -11,7 +11,11 @@ export const homeSlice: any = createSlice({
   } as any,
   reducers: {
     sendSuccess: (state, action) => {
-      if (action.payload.status === 'SUCCESS') {
+      if (
+        action.payload &&
+        action.payload.data &&
+        action.payload.data.status === 'SUCCESS'
+      ) {
         const resp = action.payload.data;
         state.encodeData = resp.data;
         state.responseMessage = resp.msg || 'Request successful!';
@@ -22,7 +26,6 @@ export const homeSlice: any = createSlice({
         state.responseStatus = resp.status;
         state.encodeData = {};
       }
-
       state.loading = false;
     },
 

@@ -64,3 +64,16 @@ hr {
   text-align: center;
   padding: 5px 0 10px 0;
 }
+.responseMessage {
+  font-size: 12px;
+  text-align: center;
+  display: none;
+}
+.red {
+  color: $red;
+  display: block;
+}
+.green {
+  color: $green;
+  display: block;
+}

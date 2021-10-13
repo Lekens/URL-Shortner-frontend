@@ -6,6 +6,14 @@ export const getURLData = createSelector(
   [selectUrlState],
   (urlsState) => urlsState.encodeData,
 );
+export const getResStatus = createSelector(
+  [selectUrlState],
+  (urlsState) => urlsState.responseStatus,
+);
+export const getResMessage = createSelector(
+  [selectUrlState],
+  (urlsState) => urlsState.responseMessage,
+);
 export const getLoadingState = createSelector(
   [selectUrlState],
   (urlsState) => urlsState.loading,
