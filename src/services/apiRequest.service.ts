@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+const baseUrl = process.env.REACT_APP_API_URL;
+const config = {
+  baseURL: baseUrl,
+  headers: { Authorization: process.env.REACT_APP_API_KEY as string },
+};
 export const apiRequest = {
   post: async (
     path: string,
@@ -14,55 +19,18 @@ export const apiRequest = {
       errorCb(error);
     }
   },
-  get: async (
-    path: string,
-    successCb: (res: any) => void,
-    errorCb: (e: any) => void,
-  ) => {
+  get: async (path: string) => {
     try {
-      const response = await axios.get(path);
-      successCb(response);
+      return await axios({
+        url: path,
+        method: 'get',
+        ...config,
+        responseType: 'json',
+      })
+        .then((response) => response)
+        .catch((error) => error);
     } catch (error) {
-      errorCb(error);
-    }
-  },
-  put: async (
-    path: string,
-    data: any,
-    successCb: (res: any) => void,
-    errorCb: (e: any) => void,
-  ) => {
-    try {
-      const response = await axios.put(path, data);
-      successCb(response);
-    } catch (error) {
-      errorCb(error);
-    }
-  },
-  patch: async (
-    path: string,
-    data: any,
-    successCb: (res: any) => void,
-    errorCb: (e: any) => void,
-  ) => {
-    try {
-      const response = await axios.patch(path, data);
-      successCb(response);
-    } catch (error) {
-      errorCb(error);
-    }
-  },
-  delete: async (
-    path: string,
-    data: any,
-    successCb: (res: any) => void,
-    errorCb: (e: any) => void,
-  ) => {
-    try {
-      const response = await axios.delete(path, data);
-      successCb(response);
-    } catch (error) {
-      errorCb(error);
+      return error;
     }
   },
 };

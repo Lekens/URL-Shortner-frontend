@@ -1,0 +1,53 @@
+@import 'features/common/assets/styles/variables.module.scss';
+
+.wrapper {
+  padding: 20px 0;
+}
+
+.loader {
+  position: relative;
+  width: 11em;
+  height: 11em;
+  margin: 50px auto;
+  animation: load3 1.4s infinite linear;
+  background: $white;
+  background: linear-gradient(to right, #fff 10%, rgba(255, 255, 255, 0) 42%);
+  border-radius: 50%;
+  font-size: 10px;
+  text-indent: -9999em;
+  transform: translateZ(0);
+}
+
+.loader::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background: $white;
+  border-radius: 100% 0 0 0;
+  content: '';
+}
+
+.loader::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 75%;
+  height: 75%;
+  margin: auto;
+  background: $gray-black;
+  border-radius: 50%;
+  content: '';
+}
+
+@keyframes load3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

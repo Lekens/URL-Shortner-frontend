@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const decodeSlice: any = createSlice({
-  name: 'home',
+  name: 'decode',
   initialState: {} as any,
   reducers: {
     sendSuccess: (state) => {

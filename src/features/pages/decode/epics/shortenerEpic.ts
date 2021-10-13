@@ -14,19 +14,19 @@ import {
   sendSuccess,
   handleError,
   fetchState,
-} from 'features/pages/home/redux/homeSlice';
+} from 'features/pages/decode/redux/decodeSlice';
 
-const getShortUrl = () => {
-  return axios.post('http://localhost:8090/api/encode', {});
+const getLongUrl = () => {
+  return axios.post('http://localhost:8090/api/decode', {});
 };
 
-const makeShortUrlEpic: MyEpic = (action$, state$) =>
+const makeLongUrlEpic: MyEpic = (action$, state$) =>
   action$.pipe(
     filter(fetchState.match),
     withLatestFrom(state$),
-    mergeMap(([,]) => from(getShortUrl())),
+    mergeMap(([,]) => from(getLongUrl())),
     map(() => sendSuccess()),
     catchError(() => of(handleError())),
   );
 
-export const shortenerEpic: MyEpic = combineEpics(makeShortUrlEpic);
+export const decodeEpic: MyEpic = combineEpics(makeLongUrlEpic);

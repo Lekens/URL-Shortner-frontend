@@ -1,9 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const listSlice: any = createSlice({
-  name: 'home',
-  initialState: {} as any,
+  name: 'list',
+  initialState: {
+    urlList: [],
+    loading: true,
+  } as any,
   reducers: {
+    fetchURLsState: (state) => state,
+
     sendSuccess: (state) => {
       state.loading = false;
     },
@@ -19,6 +24,11 @@ export const listSlice: any = createSlice({
     },
   },
 });
-export const { sendSuccess, fetchState, startLoading, handleError } =
-  listSlice.actions;
+export const {
+  sendSuccess,
+  fetchState,
+  startLoading,
+  handleError,
+  fetchURLsState,
+} = listSlice.actions;
 export default listSlice.reducer;

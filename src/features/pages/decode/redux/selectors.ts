@@ -1,3 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit';
-// @ts-ignore
-console.log(createSelector);
+
+const selectUrlState = (state: any) => state.decode;
+
+export const getURLData = createSelector(
+  [selectUrlState],
+  (urlsState) => urlsState
+);
+
