@@ -104,14 +104,5 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "coverageThreshold": {
-      "global": {
-        "branches": 0,
-        "functions": 0,
-        "lines": 0,
-        "statements": 0
-      }
-    }
-  }
+  "jest": {}
 }
