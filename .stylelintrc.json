@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-airbnb",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-idiomatic-order"
+  ],
+  "plugins": ["stylelint-scss", "stylelint-prettier", "stylelint-order"],
+  "rules": {
+    "prettier/prettier": true,
+    "string-quotes": "single",
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": "inside-block"
+      }
+    ],
+    "declaration-property-value-disallowed-list": {
+      "/^border/": []
+    },
+    "declaration-property-value-blacklist": {
+      "/^border/": []
+    },
+    "number-leading-zero": "always",
+    "selector-pseudo-class-no-unknown": null
+  }
+}

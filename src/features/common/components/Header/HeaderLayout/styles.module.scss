@@ -1,0 +1,31 @@
+@import 'features/common/assets/styles/variables.module.scss';
+
+.wrapper {
+  background: $dark-blue;
+}
+
+.content {
+  display: flex;
+  height: 38px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  color: $white;
+}
+
+.wrapperAvatar {
+  display: flex;
+  align-items: center;
+}
+
+.padLeft {
+  padding-left: 15px;
+}
+
+.centralizeLogo {
+  padding: 8px 0 3px 0;
+  color: $white;
+  font-size: 24px;
+  font-family: $font-extraBold;
+  text-align: center;
+}

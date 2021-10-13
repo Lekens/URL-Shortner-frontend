@@ -1,0 +1,15 @@
+@import 'features/common/assets/styles/variables.module.scss';
+
+.wrapper {
+  height: 100%;
+  background: $gray-black;
+}
+
+.wrapperChildren {
+  background: $gray-black;
+  color: $white;
+}
+
+.content {
+  padding: 20px;
+}

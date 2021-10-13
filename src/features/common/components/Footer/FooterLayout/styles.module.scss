@@ -1,0 +1,29 @@
+@import 'features/common/assets/styles/variables.module.scss';
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: $dark-blue;
+}
+
+.content {
+  display: flex;
+  height: 38px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 5px;
+  color: $white;
+}
+
+.footerTabs {
+  padding: 5px 5px;
+  color: $dark-gray;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+.iconDimension {
+  width: 120px;
+}

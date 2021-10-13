@@ -1,0 +1,42 @@
+// VARIABLES FONTS FOR SCSS
+$secure-font: 'Helvetica', 'Roboto', 'sans-serif';
+
+$font-regular: 'Inter-Regular', $secure-font; // 400
+$font-medium: 'Inter-Medium', $secure-font; // 500
+$font-semiBold: 'Inter-SemiBold', $secure-font; // 600
+$font-bold: 'Inter-Bold', $secure-font; // 700
+$font-extraBold: 'Inter-ExtraBold', $secure-font; // 800
+
+// VARIABLES COLORS FOR SCSS
+
+$red: #f23e3e;
+$aqua: #00b98c;
+$gold: #c0a161;
+$dark-gold: #a9863d;
+$white: #fff;
+$black: #000;
+$dark-gray: #88909e;
+$dark-blue: #2a2b37;
+$gray-black: #1f2027;
+$light-dark: #c4c4c4;
+$dime-white: #eff2f3;
+$gray-darkest: #1f1f1f;
+$confirm-green: #0ab04c;
+
+// VARIABLES COLORS FOR TSX
+
+:export {
+  /* stylelint-disable property-no-unknown */
+  aqua: $aqua;
+  black: $black;
+  dark-gold: $dark-gold;
+  darkblue: $dark-blue;
+  darkgray: $dark-gray;
+  gold: $gold;
+  grayblack: $gray-black;
+  green: $confirm-green;
+  red: $red;
+  white: $white;
+
+  /* stylelint-enable */
+}

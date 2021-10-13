@@ -1,0 +1,25 @@
+@import 'features/common/assets/styles/variables.module.scss';
+
+.button {
+  padding: 18px 0;
+  border: none;
+  margin: 0 10px;
+  background: inherit;
+  color: $white;
+  cursor: pointer;
+  font-family: $font-bold;
+  font-size: 14px;
+  line-height: 18px;
+  outline: none;
+}
+
+.active {
+  padding-bottom: 9px;
+  border-bottom: 4px solid $red;
+  color: $red;
+}
+
+.innerContent {
+  display: inline-block;
+  vertical-align: middle;
+}

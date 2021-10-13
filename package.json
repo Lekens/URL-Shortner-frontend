@@ -1,0 +1,117 @@
+{
+  "name": "web-baccarat-table-players",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.1",
+    "axios": "^0.23.0",
+    "classnames": "^2.3.1",
+    "history": "4.10.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-player": "^2.9.0",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "redux-observable": "^1.2.0",
+    "reset-css": "^5.0.1",
+    "rxjs": "6.6.7"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/history": "^4.7.8",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.20.13",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "4",
+    "lint-staged": "^11.0.0",
+    "node-sass": "^6.0.1",
+    "prettier": "2.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "react-scripts": "4.0.3",
+    "stylelint": "^13.13.1",
+    "stylelint-config-airbnb": "0.0.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.20.1",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix \"**/*.{ts,tsx}\"",
+    "coverage": "react-scripts test --coverage --watchAll=false",
+    "lint:style": "npx stylelint \"**/*.scss\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --allow-empty",
+      "pre-push": "npm run test -- --watchAll=false"
+    }
+  },
+  "lint-staged": {
+    "*.{scss,css}": [
+      "stylelint \"**/*.{css,scss,sass}\""
+    ],
+    "*.{ts,tsx}": [
+      "eslint \"**/*.{ts,tsx}\""
+    ],
+    "*.{test.ts,test.tsx}": [
+      "npm run coverage"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 32,
+        "functions": 36,
+        "lines": 39,
+        "statements": 39
+      }
+    }
+  }
+}
