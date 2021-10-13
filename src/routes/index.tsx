@@ -11,6 +11,7 @@ import { PAGES } from 'constants/pages';
 import { PageWrapper } from 'features/common/components/PageWrapper';
 import { HomeScreen } from 'features/pages/home';
 import { DecodeScreen } from 'features/pages/decode';
+import { ListScreen } from 'features/pages/list';
 
 interface IAppWrapperRouteProps extends RouteProps {
   component:
@@ -34,6 +35,7 @@ function Routes() {
     <Switch>
       <AppWrapper component={HomeScreen} path={PAGES.HOME.INDEX} />
       <AppWrapper component={DecodeScreen} path={PAGES.HOME.DECODE} />
+      <AppWrapper component={ListScreen} path={PAGES.HOME.LIST} />
       <Redirect to={PAGES.HOME.INDEX} />
     </Switch>
   );
