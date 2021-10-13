@@ -1,6 +1,5 @@
 import { combineEpics } from 'redux-observable';
 import { from, of } from 'rxjs';
-import axios from 'axios';
 import {
   filter,
   map,
@@ -13,19 +12,21 @@ import { MyEpic } from 'redux-settings/interfaces';
 import {
   sendSuccess,
   handleError,
-  fetchState,
+  encodeUrl,
 } from 'features/pages/home/redux/homeSlice';
+import { selectUrlFromState } from 'features/pages/home/redux/selectors';
+import { apiRequest } from 'services/apiRequest.service';
 
-const getShortUrl = () => {
-  return axios.post('http://localhost:8090/api/encode', {});
+const encodeLongURL = (longUrl: string) => {
+  return apiRequest.post('/encode', { longUrl });
 };
 
 const makeShortUrlEpic: MyEpic = (action$, state$) =>
   action$.pipe(
-    filter(fetchState.match),
+    filter(encodeUrl.match),
     withLatestFrom(state$),
-    mergeMap(([,]) => from(getShortUrl())),
-    map(() => sendSuccess()),
+    mergeMap(([, state]) => from(encodeLongURL(selectUrlFromState(state)))),
+    map((action: any) => sendSuccess(action)),
     catchError(() => of(handleError())),
   );
 

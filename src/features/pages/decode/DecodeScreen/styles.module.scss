@@ -1,17 +1,1 @@
-.flexContainer {
-  display: flex;
-}
-
-.flexItems {
-  min-width: 0;
-  flex: 1;
-  order: 0;
-  margin: 0 5px;
-}
-
-.flexItems:last-child {
-  position: relative;
-  overflow: hidden;
-  flex: 2;
-  order: 0;
-}
+@import 'features/common/assets/styles/variables.module.scss';

@@ -6,17 +6,19 @@ const config = {
   headers: { Authorization: process.env.REACT_APP_API_KEY as string },
 };
 export const apiRequest = {
-  post: async (
-    path: string,
-    data: any,
-    successCb: (res: any) => void,
-    errorCb: (e: any) => void,
-  ) => {
+  post: async (path: string, data: { longUrl: string }) => {
     try {
-      const response = await axios.post(path, data);
-      successCb(response);
+      return await axios({
+        url: path,
+        method: 'post',
+        ...config,
+        responseType: 'json',
+        data,
+      })
+        .then((response) => response)
+        .catch((error) => error);
     } catch (error) {
-      errorCb(error);
+      return error;
     }
   },
   get: async (path: string) => {
