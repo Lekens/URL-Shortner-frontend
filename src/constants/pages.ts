@@ -3,5 +3,6 @@ export const PAGES = Object.freeze({
     INDEX: '/encode',
     DECODE: '/decode',
     LIST: '/list',
+    INTEGRATE: '/integrate',
   },
 });

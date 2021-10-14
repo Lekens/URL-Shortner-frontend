@@ -1,6 +1,5 @@
 import { combineEpics } from 'redux-observable';
 import { from, of } from 'rxjs';
-import axios from 'axios';
 import {
   filter,
   map,
@@ -13,19 +12,21 @@ import { MyEpic } from 'redux-settings/interfaces';
 import {
   sendSuccess,
   handleError,
-  fetchState,
+  decodeUrl,
 } from 'features/pages/decode/redux/decodeSlice';
+import { apiRequest } from 'services/apiRequest.service';
+import { selectUrlFromState } from 'features/pages/decode/redux/selectors';
 
-const getLongUrl = () => {
-  return axios.post('http://localhost:8090/api/decode', {});
+const decodeShortURL = (shortUrl: string) => {
+  return apiRequest.post('/decode', { shortUrl });
 };
 
 const makeLongUrlEpic: MyEpic = (action$, state$) =>
   action$.pipe(
-    filter(fetchState.match),
+    filter(decodeUrl.match),
     withLatestFrom(state$),
-    mergeMap(([,]) => from(getLongUrl())),
-    map(() => sendSuccess()),
+    mergeMap(([, state]) => from(decodeShortURL(selectUrlFromState(state)))),
+    map((action: any) => sendSuccess(action)),
     catchError(() => of(handleError())),
   );
 

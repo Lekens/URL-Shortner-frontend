@@ -6,7 +6,7 @@ const config = {
   headers: { Authorization: process.env.REACT_APP_API_KEY as string },
 };
 export const apiRequest = {
-  post: async (path: string, data: { longUrl: string }) => {
+  post: async (path: string, data: { longUrl?: string; shortUrl?: string }) => {
     try {
       return await axios({
         url: path,

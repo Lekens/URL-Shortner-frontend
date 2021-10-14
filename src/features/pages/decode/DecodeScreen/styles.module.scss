@@ -1,1 +1,80 @@
 @import 'features/common/assets/styles/variables.module.scss';
+
+.wrapper {
+  padding: 30px 150px;
+}
+.box {
+  min-height: 300px;
+  background-color: $white;
+  padding: 30px;
+  color: $dark-gray;
+  font-family: $font-regular;
+}
+.title {
+  font-size: 24px;
+  text-align: center;
+  padding: 18px;
+  color: $dark-gold;
+  letter-spacing: 9px;
+  font-family: $font-extraBold;
+  line-height: 15px;
+}
+.inputBox {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.input {
+  width: 75%;
+  height: 55px;
+  outline-color: $dark-gray;
+  color: $dark-gold;
+  font-size: 24px;
+  line-height: 14px;
+  padding: 0 10px;
+}
+input::placeholder {
+  color: $dark-gold;
+}
+hr {
+  background-color: $light-dark;
+  height: 2px;
+}
+.result {
+  padding-top: 20px;
+  text-align: center;
+}
+.shortUrl {
+  padding: 10px 30px;
+  font-family: $font-semiBold;
+  cursor: pointer;
+}
+.padButton {
+  padding-top: 20px;
+}
+.generate {
+  background-color: $dark-gold;
+  color: $white;
+  font-size: 17px;
+  width: 140px;
+  height: 55px;
+}
+.generatedURL {
+  font-size: 16px;
+  text-align: center;
+  padding: 5px 0 10px 0;
+}
+.responseMessage {
+  font-size: 16px;
+  text-align: center;
+  display: none;
+  padding-bottom: 10px;
+}
+.red {
+  color: $red;
+  display: block;
+}
+.green {
+  color: $green;
+  display: block;
+}

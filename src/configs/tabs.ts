@@ -16,6 +16,11 @@ const getTabs = () => [
     url: PAGES.HOME.LIST,
     redirect: PAGES.HOME.LIST,
   },
+  {
+    title: 'API Integration',
+    url: PAGES.HOME.INTEGRATE,
+    redirect: PAGES.HOME.INTEGRATE,
+  },
 ];
 
 export const TABS = getTabs();
