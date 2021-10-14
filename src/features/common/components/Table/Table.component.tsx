@@ -7,17 +7,35 @@ import styles from './styles.module.scss';
 
 function Table({ data }: ITableData) {
   const [code, setCode] = useState('');
+  const [url, setUrl] = useState('');
+  const [URLs, setURLs] = useState(data);
   const showStats = (urlData: IURLData) => {
     setCode(urlData.urlCode);
   };
   const handleCloseModal = () => {
     setCode('');
   };
+  const handleChange = (event: any) => {
+    setUrl(event.target.value);
+  };
+  const searchUrl = () => {
+    const filteredData = URLs.filter((urlData) =>
+      urlData.longUrl.includes(url) ? urlData : null,
+    );
+    setURLs(() => filteredData);
+  };
   return (
     <div className={styles.tableWrapper}>
       <div className={styles.searchWrapper}>
-        <input type="search" placeholder="Search Long url..." className={styles.searchInput} />
-        <button className={styles.searchBtn}>Search</button>
+        <input
+          type="search"
+          placeholder="Search Long url..."
+          onChange={handleChange}
+          className={styles.searchInput}
+        />
+        <button type="button" className={styles.searchBtn} onClick={searchUrl}>
+          Search
+        </button>
       </div>
       {code && <ShowStats code={code} closeModal={handleCloseModal} />}
       <table>
@@ -32,7 +50,7 @@ function Table({ data }: ITableData) {
           </tr>
         </thead>
         <tbody>
-          {data.map((tableData: IURLData, index) => (
+          {URLs.map((tableData: IURLData, index) => (
             <tr key={tableData.urlCode}>
               <td>{index + 1}</td>
               <td>{tableData.creatorIP}</td>

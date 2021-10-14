@@ -20,11 +20,11 @@ function ListScreen() {
 
   const urlList = useSelector(selectURLList);
   const loading = useSelector(getLoadingState);
+
   useEffect(() => {
     dispatch(startLoading());
     dispatch(fetchURLsState());
   }, []);
-
   return (
     <div className={styles.wrapper}>
       {loading ? <Loading /> : <Table data={urlList} />}

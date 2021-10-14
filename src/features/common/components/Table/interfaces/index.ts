@@ -8,4 +8,5 @@ export interface IURLData {
 
 export interface ITableData {
   data: IURLData[];
+  sendURL?: Function;
 }

@@ -4,6 +4,7 @@ export const listSlice: any = createSlice({
   name: 'list',
   initialState: {
     urlList: [],
+    searchInput: null,
     loading: true,
     responseMessage: null,
     responseStatus: null,
