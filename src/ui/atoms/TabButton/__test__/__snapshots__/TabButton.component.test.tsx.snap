@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabButton component Show match snapshot 1`] = `
+<div>
+  <button
+    class="button"
+    style="width: 20px;"
+    type="button"
+  >
+    <span
+      class="innerContent"
+    >
+      <span>
+        Hello Tab
+      </span>
+    </span>
+  </button>
+</div>
+`;

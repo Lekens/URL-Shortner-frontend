@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingScreen component should match snapshot 1`] = `
+<div>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="loader"
+    >
+      Loading...
+    </div>
+  </div>
+</div>
+`;

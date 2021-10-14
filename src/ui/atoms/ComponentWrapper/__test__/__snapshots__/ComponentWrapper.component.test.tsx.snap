@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should test ComponentWrapper Should match snapshot 1`] = `
+<div>
+  <div
+    class="children"
+  >
+    <div>
+      Hello World
+    </div>
+  </div>
+</div>
+`;

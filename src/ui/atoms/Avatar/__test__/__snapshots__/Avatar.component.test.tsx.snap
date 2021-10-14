@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Component It should match snapshot with image src = https://s.dou.ua/img/avatars/200x200_158710.jpg 1`] = `
+<div>
+  <div
+    class="wrapper HelloClass"
+    style="width: 30px; height: 30px;"
+  >
+    <img
+      alt="https://s.dou.ua/img/avatars/200x200_158710.jpg"
+      class="img"
+      src="https://s.dou.ua/img/avatars/200x200_158710.jpg"
+    />
+  </div>
+</div>
+`;

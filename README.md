@@ -1,4 +1,4 @@
-# Url-Shortener-fronted
+# Url-Shortener-frontend
 Frontend application to manage the URL shortener service
 
 # Application installation Process
