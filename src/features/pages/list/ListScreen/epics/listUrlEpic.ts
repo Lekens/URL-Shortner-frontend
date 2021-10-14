@@ -27,5 +27,4 @@ const urlFetchEpic: MyEpic = (action$, state$) =>
     map((action: any) => sendSuccess(action)),
     catchError(() => of(handleError())),
   );
-
 export const listUrlEpic: MyEpic = combineEpics(urlFetchEpic);

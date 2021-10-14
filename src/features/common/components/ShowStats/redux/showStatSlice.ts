@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const listSlice: any = createSlice({
-  name: 'list',
+export const showStatSlice: any = createSlice({
+  name: 'stat',
   initialState: {
-    urlList: [],
-    loading: true,
+    statList: [],
+    urlCode: null,
+    loading: false,
     responseMessage: null,
     responseStatus: null,
   } as any,
   reducers: {
-    fetchURLsState: (state) => state,
+    fetchURLStatsState: (state) => state,
 
     sendSuccess: (state, action) => {
       if (
@@ -18,17 +19,18 @@ export const listSlice: any = createSlice({
         action.payload.data.status === 'SUCCESS'
       ) {
         const resp = action.payload.data;
-        state.urlList = resp.data;
+        state.statList = resp.data;
         state.responseMessage = resp.msg || 'Request successful!';
         state.responseStatus = resp.status;
       } else {
         const resp = action.payload.response.data;
         state.responseMessage = resp.msg || 'Unknown error!';
         state.responseStatus = resp.status;
-        state.urlList = [];
+        state.statList = [];
       }
       state.loading = false;
     },
+
     handleError: (state) => {
       state.loading = false;
     },
@@ -36,16 +38,17 @@ export const listSlice: any = createSlice({
     startLoading: (state) => {
       state.loading = true;
     },
-    handleStatError: (state) => {
-      state.loadingStat = false;
+    setUrlCode: (state, action) => {
+      state.urlCode = action.payload;
     },
   },
 });
 export const {
   sendSuccess,
   startLoading,
+  handleStatError,
   handleError,
   setUrlCode,
-  fetchURLsState,
-} = listSlice.actions;
-export default listSlice.reducer;
+  fetchURLStatsState,
+} = showStatSlice.actions;
+export default showStatSlice.reducer;
