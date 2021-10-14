@@ -15,6 +15,10 @@ function Table({ data }: ITableData) {
   };
   return (
     <div className={styles.tableWrapper}>
+      <div className={styles.searchWrapper}>
+        <input type="search" placeholder="Search Long url..." className={styles.searchInput} />
+        <button className={styles.searchBtn}>Search</button>
+      </div>
       {code && <ShowStats code={code} closeModal={handleCloseModal} />}
       <table>
         <thead className={styles.thead}>
