@@ -5,7 +5,7 @@ Frontend application to manage the URL shortener service
 
 ## Prerequisites
 
-Ensure you already have the backend running using the readme.md file.
+Ensure you already have the backend APPLICATION running BEFORE using the FRONTEND.
 
 1. Installed Node version >= 10
 2. Installed npm version >= 5.6
